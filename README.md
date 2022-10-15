@@ -1,7 +1,7 @@
 # BlackLauncher
 Launcher for Hacking
 
-Attention! there are no Updates for this Launcher here on Github only 
+Attention! There are no Updates for this Launcher here on Github only 
 on the Discord Server! 
 
 just press the start.bat.
